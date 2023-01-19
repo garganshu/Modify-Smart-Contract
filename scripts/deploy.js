@@ -2,8 +2,8 @@ const hre = require("hardhat");
 
 async function main() {
   
-  const contractFactory = await hre.ethers.ContractFactory("ModifyVariable");
-  const contract = await contractFactory.deploy(); 
+  let ModifyVariable = await hre.ethers.getContractFactory("ModifyVariable");
+  let contract = await ModifyVariable.deploy(10); 
 
   await contract.deployed(); 
 
